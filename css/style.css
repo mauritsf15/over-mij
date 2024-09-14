@@ -1,0 +1,123 @@
+/* Major Mono */
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+/* Vast shadow */
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+
+:root[data-theme="light"] {
+    --text: #131217;
+    --background: #faf9fb;
+    --primary: #443960;
+    --secondary: #a99acb;
+    --accent: #553e8e;
+}
+:root[data-theme="dark"] {
+    --text: #e9e8ed;
+    --background: #060507;
+    --primary: #aba0c6;
+    --secondary: #433465;
+    --accent: #8770c0;
+}
+  
+
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--background);
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body:has(.intro) {
+    overflow-y: hidden;
+
+    > .main {
+        display: none;
+    }
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+}
+
+h2 {
+    font-family: 'Vast Shadow', sans-serif;
+
+    margin: 5px;
+    background-color: var(--text);
+    color: var(--background);
+    padding: 10px;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 20vh;
+    transition-duration: 2s;
+}
+
+.intro {
+    height: 100vh !important;
+}
+
+.main {
+    max-width: 100vw;
+    padding: 20px 10vw;
+
+    min-height: 10vh;
+
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+
+        > div:nth-child(1) {
+            margin-right: 40px;
+        }
+
+        > .text {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            > p {
+                font-size: 18px;
+            }
+        }
+
+        div:has(img) {
+            max-width: 40%;
+
+            > img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: var(--accent);
+    cursor: pointer;
+    
+    transition-duration: 0.3s;
+}
+
+.link:hover {
+    color: var(--primary)
+}
+
+.pfp {
+    filter: drop-shadow(5px 5px 1px var(--primary));
+}
