@@ -42,6 +42,10 @@ body:has(.intro) {
     }
 }
 
+.title {
+    text-align: center;
+}
+
 h1 {
     font-family: 'Major Mono Display', monospace;
 }
@@ -49,7 +53,7 @@ h1 {
 h2 {
     font-family: 'Vast Shadow', sans-serif;
 
-    margin: 5px;
+    margin: 5px 0;
     background-color: var(--primary);
     color: var(--background);
     padding: 10px;
@@ -96,7 +100,7 @@ h2 {
             }
         }
 
-        div:has(img) {
+        > div:has(img) {
             max-width: 40%;
 
             > img {
@@ -120,4 +124,38 @@ h2 {
 
 .pfp {
     filter: drop-shadow(5px 5px 1px var(--primary));
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    .show-mobile {
+        display: block;
+    }
+
+    .main > div {
+        flex-direction: column;
+
+        > div:has(img) {
+            max-width: 80%;
+
+            > img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    h2 {
+        margin-top: 50px !important;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
 }
