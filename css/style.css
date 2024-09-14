@@ -50,7 +50,7 @@ h2 {
     font-family: 'Vast Shadow', sans-serif;
 
     margin: 5px;
-    background-color: var(--text);
+    background-color: var(--primary);
     color: var(--background);
     padding: 10px;
 }
